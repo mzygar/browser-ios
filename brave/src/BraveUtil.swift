@@ -36,7 +36,7 @@ class Debug_FuncProfiler {
 }
 
 func postAsyncToBackground(_ delay:Double = 0, closure:@escaping ()->()) {
-    postAsyncToQueue(DispatchQueue.global( priority: DispatchQueue.GlobalQueuePriority.background), delay: delay, closure: closure)
+    postAsyncToQueue(DispatchQueue.global(qos: .background), delay: delay, closure: closure)
 }
 
 func postAsyncToMain(_ delay:Double = 0, closure:@escaping ()->()) {

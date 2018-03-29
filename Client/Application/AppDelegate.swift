@@ -250,7 +250,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIViewControllerRestorati
 
         // Now roll logs.
         log.debug("Triggering log roll.")
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background).async {
+        DispatchQueue.global(qos: .background).async {
             Logger.syncLogger.deleteOldLogsDownToSizeLimit()
             Logger.browserLogger.deleteOldLogsDownToSizeLimit()
         }
@@ -634,7 +634,7 @@ extension AppDelegate: TabManagerStateDelegate {
 
         // Don't insert into the DB immediately. We tend to contend with more important
         // work like querying for top sites.
-        let queue = DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background)
+        let queue = DispatchQueue.global(qos: .background)
         queue.asyncAfter(deadline: DispatchTime.now() + Double(Int64(ProfileRemoteTabsSyncDelay * Double(NSEC_PER_MSEC))) / Double(NSEC_PER_SEC)) {
             self.profile?.storeTabs(storedTabs)
         }
