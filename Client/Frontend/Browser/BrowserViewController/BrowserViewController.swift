@@ -1233,7 +1233,7 @@ extension BrowserViewController: KeyboardHelperDelegate {
             self.snackBars.layoutIfNeeded()
         }
         
-        if let loginsHelper = tabManager.selectedTab?.getHelper(LoginsHelper) {
+        if let loginsHelper = tabManager.selectedTab?.getHelper(LoginsHelper.self) {
             loginsHelper.hideKeyboardAccessory()
             urlBar.pwdMgrButton.isHidden = true
             urlBar.setNeedsUpdateConstraints()
