@@ -618,18 +618,18 @@ class BraveWebView: UIWebView {
             recentlyBlocked = RecentlyBlocked()
         case .httpseIncrement:
             shieldStats.httpse += increment
-            BraveGlobalShieldStats.singleton.httpse += increment
+            BraveGlobalShieldStats.singleton.httpse += Int32(increment)
         case .abIncrement:
             shieldStats.abAndTp += increment
-            BraveGlobalShieldStats.singleton.adblock += increment
+            BraveGlobalShieldStats.singleton.adblock += Int32(increment)
         case .tpIncrement:
             shieldStats.abAndTp += increment
-            BraveGlobalShieldStats.singleton.trackingProtection += increment
+            BraveGlobalShieldStats.singleton.trackingProtection += Int32(increment)
         case .jsSetValue:
             shieldStats.js = increment
         case .fpIncrement:
             shieldStats.fp += increment
-            BraveGlobalShieldStats.singleton.fpProtection += increment
+            BraveGlobalShieldStats.singleton.fpProtection += Int32(increment)
         }
 
         postAsyncToMain(0.2) { [weak self] in
