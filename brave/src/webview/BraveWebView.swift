@@ -353,13 +353,13 @@ class BraveWebView: UIWebView {
         _ = Try(withTry: {
             self.removeBvcObserversOnDeinit?(self)
         }) { (exception) -> Void in
-            print("Failed remove: \(exception)")
+            print("Failed remove: \(String(describing: exception))")
         }
 
         _ = Try(withTry: {
             self.removeProgressObserversOnDeinit?(self)
         }) { (exception) -> Void in
-            print("Failed remove: \(exception)")
+            print("Failed remove: \(String(describing: exception))")
         }
     }
 

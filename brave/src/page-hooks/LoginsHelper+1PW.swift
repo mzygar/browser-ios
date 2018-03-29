@@ -285,7 +285,7 @@ extension LoginsHelper {
             }
 
             if !success {
-                print("Failed to fill into webview: <\(error)>")
+                print("Failed to fill into webview: <\(String(describing: error))>")
             }
         }
     }

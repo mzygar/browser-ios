@@ -239,6 +239,6 @@ class URLProtocol: Foundation.URLProtocol {
 
     func connection(_ connection: NSURLConnection!, didFailWithError error: NSError!) {
         self.client!.urlProtocol(self, didFailWithError: error)
-        print("* Error url: \(self.request.url?.absoluteString)\n* Details: \(error)")
+        print("* Error url: \(String(describing: self.request.url?.absoluteString))\n* Details: \(error)")
     }
 }
