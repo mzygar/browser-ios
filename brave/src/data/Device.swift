@@ -68,7 +68,7 @@ class Device: NSManagedObject, Syncable {
     }
     
     func update(syncRecord record: SyncRecord) {
-        guard let device = record as? SyncDevice else { return }
+        guard let _ = record as? SyncDevice else { return }
         // TODO: Handle updating
     }
     

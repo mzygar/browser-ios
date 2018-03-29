@@ -133,7 +133,7 @@ class LoginListViewController: UIViewController {
 
         KeyboardHelper.defaultHelper.addDelegate(self)
 
-        searchView.isEditing ? loadLogins(searchView.inputField.text) : loadLogins()
+        _ = searchView.isEditing ? loadLogins(searchView.inputField.text) : loadLogins()
     }
 
     override func viewDidLayoutSubviews() {

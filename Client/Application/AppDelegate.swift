@@ -645,7 +645,7 @@ extension AppDelegate: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         // Dismiss the view controller and start the app up
         controller.dismiss(animated: true, completion: nil)
-        startApplication(application!, withLaunchOptions: self.launchOptions)
+        _ = startApplication(application!, withLaunchOptions: self.launchOptions)
     }
 }
 
