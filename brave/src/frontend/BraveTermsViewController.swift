@@ -43,7 +43,7 @@ class BraveTermsViewController: UIViewController {
             NSFontAttributeName: UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium),
             NSParagraphStyleAttributeName: paragraphStyle ]
         
-        attributedString.addAttributes(fontAttributes, range: NSMakeRange(0, (attributedString.string.characters.count - 1)))
+        attributedString.addAttributes(fontAttributes, range: NSMakeRange(0, (attributedString.string.count - 1)))
         attributedString.addAttribute(NSLinkAttributeName, value: "https://brave.com/terms_of_use.html", range: linkRange)
         
         let linkAttributes = [

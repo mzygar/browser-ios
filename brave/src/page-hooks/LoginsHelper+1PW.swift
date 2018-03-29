@@ -196,7 +196,7 @@ extension LoginsHelper {
 
     // recurse through items until the 1pw/lastpass/bitwarden/truekey share item is found
     fileprivate func selectShareItem(_ view: UIView, shareItemName: String) -> Bool {
-        if shareItemName.characters.count == 0 {
+        if shareItemName.count == 0 {
             return false
         }
 

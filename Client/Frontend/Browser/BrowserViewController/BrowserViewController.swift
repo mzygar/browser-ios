@@ -1264,7 +1264,7 @@ extension BrowserViewController: TabTrayDelegate {
 
 
     func tabTrayDidAddToReadingList(_ tab: Browser) -> ReadingListClientRecord? {
-        guard let url = tab.url?.absoluteString, url.characters.count > 0 else { return nil }
+        guard let url = tab.url?.absoluteString, url.count > 0 else { return nil }
         return profile.readingList?.createRecordWithURL(url, title: tab.title ?? url, addedBy: UIDevice.current.name).successValue
     }
 

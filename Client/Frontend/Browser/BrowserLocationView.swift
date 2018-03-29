@@ -284,7 +284,7 @@ class BrowserLocationView: UIView {
         if let httplessURL = url?.absoluteDisplayString, let baseDomain = url?.baseDomain {
             // Highlight the base domain of the current URL.
             let attributedString = NSMutableAttributedString(string: httplessURL)
-            let nsRange = NSMakeRange(0, httplessURL.characters.count)
+            let nsRange = NSMakeRange(0, httplessURL.count)
             attributedString.addAttribute(NSForegroundColorAttributeName, value: baseURLFontColor, range: nsRange)
             attributedString.colorSubstring(baseDomain, withColor: hostFontColor)
             attributedString.addAttribute(UIAccessibilitySpeechAttributePitch, value: NSNumber(value: BrowserLocationViewUX.BaseURLPitch), range: nsRange)

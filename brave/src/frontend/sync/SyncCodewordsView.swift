@@ -47,7 +47,7 @@ class SyncCodewordsView: UIView, UITextFieldDelegate {
     }
     
     func codeWords() -> [String] {
-        return fields.map { $0.text?.withoutSpaces }.filter { $0?.characters.count ?? 0 > 0 }.flatMap { $0 }
+        return fields.map { $0.text?.withoutSpaces }.filter { $0?.count ?? 0 > 0 }.flatMap { $0 }
     }
     
     override func layoutSubviews() {

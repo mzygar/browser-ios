@@ -278,7 +278,7 @@ class Browser: NSObject, BrowserWebViewDelegate {
                 guard let url = URL(string: urlString) else { continue }
                 let updatedURL = WebServer.sharedInstance.updateLocalURL(url)!.absoluteString
                 let curr = updatedURL.regexReplacePattern("https?:..", with: "")
-                if curr.characters.count > 1 && curr == prev {
+                if curr.count > 1 && curr == prev {
                     updatedURLs.removeLast()
                 }
                 prev = curr
@@ -303,7 +303,7 @@ class Browser: NSObject, BrowserWebViewDelegate {
         } else if let request = lastRequest {
             webView.loadRequest(request)
         } else {
-            log.error("creating webview with no lastRequest and no session data: \(self.url)")
+            log.error("creating webview with no lastRequest and no session data: \(String(describing: self.url))")
         }
 
     }

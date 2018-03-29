@@ -252,7 +252,7 @@ class MigrateData: NSObject {
                 let title = String(cString: sqlite3_column_text(results, 1))
                 let history = String(cString: sqlite3_column_text(results, 2))
                 let historyData = history.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "\\", with: "")
-                let historyList: [String] = historyData.characters.split{$0 == ","}.map(String.init)
+                let historyList: [String] = historyData.split{$0 == ","}.map(String.init)
                 
                 guard let tabId = TabMO.freshTab().syncUUID else { continue }
                 let tab = SavedTab(id: tabId, title: title, url: url, isSelected: false, order: order, screenshot: nil, history: historyList, historyIndex: Int16(historyList.count-1))

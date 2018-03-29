@@ -8,8 +8,8 @@ extension UILabel {
     func bold(range: ClosedRange<String.Index>) {
         if let text = self.attributedText {
             let attr = NSMutableAttributedString(attributedString: text)
-            let start = text.string.characters.distance(from: text.string.startIndex, to: range.lowerBound)
-            let length = text.string.characters.distance(from: range.lowerBound, to: range.upperBound)
+            let start = text.string.distance(from: text.string.startIndex, to: range.lowerBound)
+            let length = text.string.distance(from: range.lowerBound, to: range.upperBound)
             attr.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: self.font.pointSize)], range: NSMakeRange(start, length))
             self.attributedText = attr
         }

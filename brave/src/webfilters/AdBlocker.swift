@@ -51,7 +51,7 @@ class AdBlocker {
                 if let _ = regionToS3FileName[twoLetterLocale] {
                     print("Duplicate regions not handled yet \(twoLetterLocale)")
                 }
-                if twoLetterLocale.characters.count > 2 {
+                if twoLetterLocale.count > 2 {
                     print("Only 2 letter locale codes are handled.")
                     twoLetterLocale = (twoLetterLocale as NSString).substring(to: 2)
                 }

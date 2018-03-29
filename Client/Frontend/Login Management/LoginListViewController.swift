@@ -497,7 +497,7 @@ fileprivate class LoginCursorDataSource: NSObject, UITableViewDataSource {
         allLogins.forEach { login in
             // Fallback to hostname if we can't extract a base domain.
             let sortBy = login.hostname.asURL?.baseDomain?.uppercased() ?? login.hostname
-            let sectionTitle = sortBy.characters.first ?? Character("")
+            let sectionTitle = sortBy.first ?? Character("")
             titleSet.insert(sectionTitle)
 
             var logins = sections[sectionTitle] ?? []

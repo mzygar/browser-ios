@@ -514,7 +514,7 @@ class BraveWebView: UIWebView {
     }
 
     fileprivate func convertStringToDictionary(_ text: String?) -> [String:AnyObject]? {
-        if let data = text?.data(using: String.Encoding.utf8), (text?.characters.count ?? 0) > 0 {
+        if let data = text?.data(using: String.Encoding.utf8), (text?.count ?? 0) > 0 {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:AnyObject]
                 return json
@@ -851,7 +851,7 @@ extension BraveWebView: UIWebViewDelegate {
             var handled = false
             if error.code == -1009 /*kCFURLErrorNotConnectedToInternet*/ {
                 let cache = URLCache.shared.cachedResponse(for: URLRequest(url: errorUrl))
-                if let html = cache?.data.utf8EncodedString, html.characters.count > 100 {
+                if let html = cache?.data.utf8EncodedString, html.count > 100 {
                     loadHTMLString(html, baseURL: errorUrl)
                     handled = true
                 }

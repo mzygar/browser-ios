@@ -76,8 +76,8 @@ class LoginsHelper: BrowserHelper {
                 range: nil,
                 locale: nil)!
             string.replaceSubrange(range, with: replace)
-            let nsRange = NSMakeRange(string.characters.distance(from: string.startIndex, to: range.lowerBound),
-                replace.characters.count)
+            let nsRange = NSMakeRange(string.distance(from: string.startIndex, to: range.lowerBound),
+                replace.count)
             ranges.append(nsRange)
         }
 

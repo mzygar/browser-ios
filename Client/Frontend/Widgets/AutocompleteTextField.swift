@@ -106,7 +106,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     fileprivate func removeCompletion() {
         if completionActive {
             // Workaround for stuck highlight bug.
-            if enteredText.characters.count == 0 {
+            if enteredText.count == 0 {
                 attributedText = NSAttributedString(string: " ")
             }
 
@@ -154,10 +154,10 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
             // Check that the length of the entered text is shorter than the length of the suggestion.
             // This ensures that completionActive is true only if there are remaining characters to
             // suggest (which will suppress the caret).
-            if suggestion.startsWith(normalizeString(enteredText)) && normalizeString(enteredText).characters.count < suggestion.characters.count {
-                let endingString = suggestion.substring(from: suggestion.characters.index(suggestion.startIndex, offsetBy: normalizeString(enteredText).characters.count))
+            if suggestion.startsWith(normalizeString(enteredText)) && normalizeString(enteredText).count < suggestion.count {
+                let endingString = suggestion.substring(from: suggestion.index(suggestion.startIndex, offsetBy: normalizeString(enteredText).count))
                 let completedAndMarkedString = NSMutableAttributedString(string: enteredText + endingString)
-                completedAndMarkedString.addAttribute(NSBackgroundColorAttributeName, value: highlightColor, range: NSMakeRange(enteredText.characters.count, endingString.characters.count))
+                completedAndMarkedString.addAttribute(NSBackgroundColorAttributeName, value: highlightColor, range: NSMakeRange(enteredText.count, endingString.count))
                 attributedText = completedAndMarkedString
                 completionActive = true
                 previousSuggestion = suggestion

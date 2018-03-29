@@ -314,22 +314,22 @@ class PinLockView: UIView {
     }
     
     func SEL_pinButton(_ sender: UIButton) {
-        if pin.characters.count < 4 {
+        if pin.count < 4 {
             let value = sender.tag == 10 ? 0 : sender.tag
             pin = pin + "\(value)"
         }
         
-        pinIndicatorView.index(pin.characters.count)
+        pinIndicatorView.index(pin.count)
         
-        if pin.characters.count == 4 && codeCallback != nil {
+        if pin.count == 4 && codeCallback != nil {
             codeCallback!(pin)
         }
     }
     
     func SEL_delete(_ sender: UIButton) {
-        if pin.characters.count > 0 {
-            pin = pin.substring(to: pin.characters.index(pin.endIndex, offsetBy: -1))
-            pinIndicatorView.index(pin.characters.count)
+        if pin.count > 0 {
+            pin = pin.substring(to: pin.index(pin.endIndex, offsetBy: -1))
+            pinIndicatorView.index(pin.count)
         }
     }
     

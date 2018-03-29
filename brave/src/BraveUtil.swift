@@ -109,7 +109,7 @@ class InsetLabel: UILabel {
 extension String {
     func regexReplacePattern(_ pattern:String,  with:String) -> String {
         let regex = try! NSRegularExpression(pattern:pattern, options: [])
-        return regex.stringByReplacingMatches(in: self, options: [], range: NSMakeRange(0, self.characters.count), withTemplate: with)
+        return regex.stringByReplacingMatches(in: self, options: [], range: NSMakeRange(0, self.count), withTemplate: with)
     }
 }
 

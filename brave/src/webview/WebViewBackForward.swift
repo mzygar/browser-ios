@@ -68,7 +68,7 @@ class WebViewBackForwardList {
         
         if cachedHistoryStringLength > 0 && cachedHistoryStringLength == nsHistory.length &&
             cachedHistoryStringPositionOfCurrentMarker > -1 &&
-            nsHistory.substring(with: NSMakeRange(cachedHistoryStringPositionOfCurrentMarker, currIndicator.characters.count)) == currIndicator {
+            nsHistory.substring(with: NSMakeRange(cachedHistoryStringPositionOfCurrentMarker, currIndicator.count)) == currIndicator {
             // the history is unchanged (based on this guesstimate)
             return
         }
@@ -78,7 +78,7 @@ class WebViewBackForwardList {
         backForwardList = []
 
         let regex = try! NSRegularExpression(pattern:"\\d+\\) +<WebHistoryItem.+> (http.+) ", options: [])
-        let result = regex.matches(in: history, options: [], range: NSMakeRange(0, (history.characters.count)))
+        let result = regex.matches(in: history, options: [], range: NSMakeRange(0, (history.count)))
         var i = 0
         var foundCurrent = false
         for match in result {
@@ -91,8 +91,8 @@ class WebViewBackForwardList {
             let item = LegacyBackForwardListItem(url: url)
             backForwardList.append(item)
 
-            let rangeStart = match.range.location - currIndicator.characters.count
-            if rangeStart > -1 && nsHistory.substring(with: NSMakeRange(rangeStart, currIndicator.characters.count)) == currIndicator {
+            let rangeStart = match.range.location - currIndicator.count
+            if rangeStart > -1 && nsHistory.substring(with: NSMakeRange(rangeStart, currIndicator.count)) == currIndicator {
                 currentIndex = i
                 foundCurrent = true
                 cachedHistoryStringPositionOfCurrentMarker = rangeStart

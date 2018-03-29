@@ -41,7 +41,7 @@ class ElementAtPoint {
         let result = webView.stringByEvaluatingJavaScript(from: ElementAtPoint.javascript + "(\(pt.x), \(pt.y))")
         //print("\(result ?? "no match")")
 
-        guard let response = result, response.characters.count > "{}".characters.count else {
+        guard let response = result, response.count > "{}".count else {
             return nil
         }
 
