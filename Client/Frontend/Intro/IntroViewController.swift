@@ -78,8 +78,8 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         view.backgroundColor = UIColor.white
 
         bgColors.append(BraveUX.BraveButtonMessageInUrlBarColor)
-        bgColors.append(UIColor(colorLiteralRed: 69/255.0, green: 155/255.0, blue: 255/255.0, alpha: 1.0))
-        bgColors.append(UIColor(colorLiteralRed: 254/255.0, green: 202/255.0, blue: 102/255.0, alpha: 1.0))
+        bgColors.append(UIColor(red: 69/255.0, green: 155/255.0, blue: 255/255.0, alpha: 1.0))
+        bgColors.append(UIColor(red: 254/255.0, green: 202/255.0, blue: 102/255.0, alpha: 1.0))
         bgColors.append(BraveUX.BraveButtonMessageInUrlBarColor)
         bgColors.append(BraveUX.BraveButtonMessageInUrlBarColor)
 
