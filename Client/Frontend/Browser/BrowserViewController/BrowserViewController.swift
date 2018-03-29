@@ -1192,7 +1192,7 @@ extension BrowserViewController: KeyboardHelperDelegate {
 
         adjustFindInPageBar(safeArea: false)
 
-        if let loginsHelper = tabManager.selectedTab?.getHelper(LoginsHelper) {
+        if let loginsHelper = tabManager.selectedTab?.getHelper(LoginsHelper.self) {
             // keyboardWillShowWithState is called during a hide (brilliant), and because PW button setup is async make sure to exit here if already showing the button, or the show code will be called after kb hide
             if !urlBar.pwdMgrButton.isHidden || loginsHelper.getKeyboardAccessory() != nil {
                 return
