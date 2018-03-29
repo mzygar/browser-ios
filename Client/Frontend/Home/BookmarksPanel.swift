@@ -395,7 +395,7 @@ class BookmarksPanel: SiteTableViewController, HomePanel {
             break
         case NSNotification.Name.UITextFieldTextDidChange:
             if let okAction = addBookmarksFolderOkAction, let textField = notification.object as? UITextField {
-                okAction.isEnabled = (textField.text?.characters.count ?? 0) > 0
+                okAction.isEnabled = (textField.text?.count ?? 0) > 0
             }
             break
         default:

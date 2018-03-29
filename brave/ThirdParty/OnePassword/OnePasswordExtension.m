@@ -564,7 +564,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
     NSItemProvider *itemProvider = [[NSItemProvider alloc] initWithItem:item typeIdentifier:kUTTypeAppExtensionFillBrowserAction];
 	NSExtensionItem *extensionItem = [[NSExtensionItem alloc] init];
 
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:extensionItem.userInfo];
+//    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:extensionItem.userInfo];
     //this modification to the userInfo dict is needed by dashlane
 //    [dict addEntriesFromDictionary:@{ @"dashlaneExtensionRequestAppName" : @"Brave"}];
 //    extensionItem.userInfo = dict;
